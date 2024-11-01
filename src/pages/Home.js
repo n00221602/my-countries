@@ -24,7 +24,7 @@ const Home = () => {
             country.name.common.toLowerCase().includes(searchTerm.toLowerCase()) || country.region.toLowerCase().includes(searchTerm.toLowerCase())
         ));
 
-       
+
 
     }, [searchTerm]);
 
@@ -51,8 +51,8 @@ const Home = () => {
         <div>
             <Container fluid className="p-0 px-5">
 
-                
-            {/* Displays title and globe chart */}
+
+                {/* Displays title and globe chart */}
                 <Row className='py-3'>
                     <Col md={12} className='text-center'>
                         <h1 className='display-1 fw-bold text-info'>Select a Country</h1>
@@ -64,7 +64,7 @@ const Home = () => {
                     <Col></Col>
                 </Row>
 
-                <hr style={{border: '3px solid white'}}></hr>
+                <hr style={{ border: '3px solid white' }}></hr>
 
                 {/* Displays sub-heading and search bar */}
                 <Row className='text-center mb-2'>
@@ -72,12 +72,12 @@ const Home = () => {
                     <Col></Col>
 
                     <Col md={4}>
-                    <h2 className='display-2 fw-bold text-info'>All Countries</h2>
-                    <input  className='w-100 mb-2' placeholder='Search for a country' onChange={handleChange}></input>
+                        <h2 className='display-2 fw-bold text-info'>All Countries</h2>
+                        <input className='w-100 mb-2' placeholder='Search for a country / region' onChange={handleChange}></input>
                     </Col>
 
                     <Col></Col>
-                    
+
                 </Row>
 
                 {/* Displays country card components */}

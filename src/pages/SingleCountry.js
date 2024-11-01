@@ -116,7 +116,7 @@ const SingleCountry = () => {
             {/* Code runs once weather is defined */}
             {weather && (
                 <>
-                    
+
                     <Row className="text-center pb-4">
 
                         {/*Weather heading*/}
@@ -146,7 +146,7 @@ const SingleCountry = () => {
                             <h4>Wind Speed:</h4>
                             <h5 className="fw-normal">{weather.wind.speed}</h5>
                         </Col>
-                        
+
                     </Row>
                     <hr></hr>
                 </>

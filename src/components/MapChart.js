@@ -34,21 +34,24 @@ const MapChart = () => {
         // Create main polygon series for countries
         // https://www.amcharts.com/docs/v5/charts/map-chart/map-polygon-series/
         let polygonSeries = chart.series.push(am5map.MapPolygonSeries.new(root, {
-            geoJSON: am5geodata_worldLow    
+            geoJSON: am5geodata_worldLow
         }));
 
+
+        //Creating the countries template
         polygonSeries.mapPolygons.template.setAll({
             tooltipText: "{name}",
             toggleKey: "active",
             interactive: true
         });
 
+        //Setting the country colours
         polygonSeries.mapPolygons.template.states.create("hover", {
             fill: root.interfaceColors.get("primaryButtonHover"),
-            
+
         });
 
-        //Click event on a country
+        //Click event for a country
         polygonSeries.mapPolygons.template.events.on("click", function (ev) {
             console.log("Clicked on", ev.target.dataItem.dataContext.name);
 
@@ -84,17 +87,19 @@ const MapChart = () => {
             loops: Infinity
         });
 
-        // Make stuff animate on load
+        // Chart begins once loaded
         chart.appear(1000, 100);
 
+        //Disposes multiple roots
         return () => {
             root.dispose();
         };
 
     }, []);
 
+    //Displays the chart
     return (
-        <div id="chartdiv" className="d-flex justify-self-center" style={{height: "600px", width: "100%" }}></div>
+        <div id="chartdiv" className="d-flex justify-self-center" style={{ height: "600px", width: "100%" }}></div>
     );
 
 };
