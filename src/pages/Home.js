@@ -5,6 +5,7 @@ import CountryCard from '../components/CountryCard';
 import { Row, Col, Container } from 'react-bootstrap';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropDownMenu from '../components/Dropdown';
+import FoodCard from '../components/FoodCard';
 
 import MapChart from '../components/MapChart'
 
@@ -16,7 +17,6 @@ const Home = () => {
         if (!searchTerm) {
             axios.get('https://restcountries.com/v3.1/all')
                 .then(response => {
-                    console.log(response.data);
                     setCountriesList(response.data);
                 })
                 .catch(error => {
@@ -25,7 +25,7 @@ const Home = () => {
         }
 
         setCountriesList(countriesList.filter((country) =>
-            country.name.common.toLowerCase().includes(searchTerm.toLowerCase())
+            country.name.common.toLowerCase().includes(searchTerm.toLowerCase()) || country.region.toLowerCase().includes(searchTerm.toLowerCase())
         ));
 
        
@@ -36,8 +36,8 @@ const Home = () => {
         setSearchTerm(e.target.value)
     }
 
-    let filteredCountriesList = countriesList.map((country) => country.region)
-    console.log(JSON.stringify(filteredCountriesList))
+    // let filteredCountriesList = countriesList.map((country) => country.demonyms)
+    // console.log(JSON.stringify(filteredCountriesList))
 
     let countryCards = countriesList.map((country, index) => {
         return (

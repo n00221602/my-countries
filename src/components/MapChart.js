@@ -31,7 +31,6 @@ const MapChart = () => {
             projection: am5map.geoOrthographic(),
         }));
 
-
         // Create main polygon series for countries
         // https://www.amcharts.com/docs/v5/charts/map-chart/map-polygon-series/
         let polygonSeries = chart.series.push(am5map.MapPolygonSeries.new(root, {
@@ -57,13 +56,12 @@ const MapChart = () => {
             window.location.replace("/country/" + url)
         });
 
-
         // Create series for background fill
         // https://www.amcharts.com/docs/v5/charts/map-chart/map-polygon-series/#Background_polygon
         let backgroundSeries = chart.series.push(am5map.MapPolygonSeries.new(root, {}));
         backgroundSeries.mapPolygons.template.setAll({
-            fill: root.interfaceColors.get("alternativeBackground"),
-            fillOpacity: 0.1,
+            fill: root.interfaceColors.get("primaryButtonHover"),
+            fillOpacity: 0.2,
             strokeOpacity: 0.4
         });
         backgroundSeries.data.push({
@@ -85,7 +83,6 @@ const MapChart = () => {
             duration: 30000,
             loops: Infinity
         });
-
 
         // Make stuff animate on load
         chart.appear(1000, 100);

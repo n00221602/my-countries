@@ -6,6 +6,7 @@ import NavbarMain from "./components/Navbar";
 //import pages
 import Home from './pages/Home';
 import SingleCountry from './pages/SingleCountry';
+import Welcome from "./pages/Welcome";
 
 import { Container } from 'react-bootstrap';
 
@@ -17,7 +18,8 @@ const App = () => {
                 <Router>
                 <NavbarMain />
                     <Routes>
-                        <Route path='/' element={<Home />} />
+                        <Route path='/' element={<Welcome />} />
+                        <Route path='/home' element={<Home />} />
                         <Route path='/country/:name' element={<SingleCountry />} />
                         <Route path='/country/:region' element={<SingleCountry />} />
                     </Routes>

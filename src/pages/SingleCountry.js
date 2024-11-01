@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import axios from 'axios';
 import { Row, Col, Image, Container } from 'react-bootstrap';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import FoodCard from "../components/FoodCard";
 
 const SingleCountry = () => {
     const { name } = useParams();
@@ -82,6 +83,8 @@ const SingleCountry = () => {
                 </Marker>
 
             </MapContainer>
+
+            <FoodCard country={country.demonyms.eng.m}/>
         </Container>
     );
 }

@@ -11,6 +11,7 @@ const CountryCard = (props) => {
                 <Card.Title>
                     <Link to={`/country/${name}`}>{props.name}</Link>
                 </Card.Title>
+                <p>{region}</p>
             </Card.Body>
         </Card>
     )
