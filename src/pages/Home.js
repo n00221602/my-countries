@@ -49,13 +49,13 @@ const Home = () => {
 
     return (
         <div>
-            <Container className="p-0 bg-primary-subtle">
+            <Container fluid className="p-0 px-5">
 
                 
-
+            {/* Displays title and globe chart */}
                 <Row className='py-3'>
                     <Col md={12} className='text-center'>
-                        <h1 className='display-1 fw-bold'>Welcome to Countries.</h1>
+                        <h1 className='display-1 fw-bold text-info'>Select a Country</h1>
                     </Col>
                     <Col></Col>
                     <Col md={5}>
@@ -64,15 +64,28 @@ const Home = () => {
                     <Col></Col>
                 </Row>
 
-                <Row md={12} className='text-center'>
-                    <input placeholder='Search' onChange={handleChange}></input>
-                    <h2>All Countries</h2>
+                <hr style={{border: '3px solid white'}}></hr>
+
+                {/* Displays sub-heading and search bar */}
+                <Row className='text-center mb-2'>
+
+                    <Col></Col>
+
+                    <Col md={4}>
+                    <h2 className='display-2 fw-bold text-info'>All Countries</h2>
+                    <input  className='w-100 mb-2' placeholder='Search for a country' onChange={handleChange}></input>
+                    </Col>
+
+                    <Col></Col>
+                    
                 </Row>
 
-                <Row md={5} xs={1}>
+                {/* Displays country card components */}
+                <Row md={6} xs={1} className='d-flex justify-content-center'>
                     {countryCards}
                 </Row>
 
+                {/* Displays the amount of results shown*/}
                 <Row className="text-center">
                     <h2>Showing {countriesList.length} result{countriesList.length !== 1 && 's'}</h2>
                 </Row>

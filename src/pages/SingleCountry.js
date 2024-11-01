@@ -95,6 +95,8 @@ const SingleCountry = () => {
             </Row>
             <hr></hr>
 
+            {/* Displays the map */}
+
             <MapContainer
                 className="mb-4"
                 style={{ height: "600px", width: "80%", margin: "auto" }}
@@ -114,10 +116,16 @@ const SingleCountry = () => {
             {/* Code runs once weather is defined */}
             {weather && (
                 <>
+                    
                     <Row className="text-center pb-4">
+
+                        {/*Weather heading*/}
+
                         <Col md={12} className="mb-2">
                             <h2 className="text-center">Weather in {country.name.official}</h2>
                         </Col>
+
+                        {/*Weather information*/}
 
                         <Col>
                             <h4>Description:</h4>
@@ -138,7 +146,7 @@ const SingleCountry = () => {
                             <h4>Wind Speed:</h4>
                             <h5 className="fw-normal">{weather.wind.speed}</h5>
                         </Col>
-
+                        
                     </Row>
                     <hr></hr>
                 </>

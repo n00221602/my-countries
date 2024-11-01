@@ -1,17 +1,16 @@
 import { Card } from "react-bootstrap";
-import { Link } from "react-router-dom";
 
 const CountryCard = (props) => {
     const {name, flag, region} = props;
 
     return (
-        <Card className="my-2">
-            <Card.Img className='h-50 w-100 border' src={flag} variant='top'/>
+        <Card className="m-2 p-2 text-center bg-dark">
+            <Card.Img className='h-50 w-100' src={flag} variant='top'/>
             <Card.Body>
                 <Card.Title>
-                    <Link to={`/country/${name}`}>{props.name}</Link>
+                    <a href={`/country/${name}`} class="btn btn-info text-light fw-semibold btn-lg">{props.name}</a>
                 </Card.Title>
-                <p>{region}</p>
+                <p className="text-light">{region}</p>
             </Card.Body>
         </Card>
     )
