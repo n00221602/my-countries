@@ -1,11 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
 import CountryCard from '../components/CountryCard';
 import { Row, Col, Container } from 'react-bootstrap';
-import Dropdown from 'react-bootstrap/Dropdown';
-import DropDownMenu from '../components/Dropdown';
-import FoodCard from '../components/FoodCard';
 
 import MapChart from '../components/MapChart'
 
@@ -51,14 +47,6 @@ const Home = () => {
         );
     });
 
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition((position) => {
-            console.log(position.coords.latitude, position.coords.longitude);
-          });
-      } else {
-        console.log("Geolocation not supported");
-      }
-
     return (
         <div>
             <Container className="p-0 bg-primary-subtle">
@@ -75,17 +63,6 @@ const Home = () => {
                     </Col>
                     <Col></Col>
                 </Row>
-
-                {/* <Row className='py-3'>
-
-                    <Col md={5} className='d-flex align-items-center'>
-                        <h1 className='display-1 ps-1 fw-bold text-info'>Welcome to Countries.</h1>
-                    </Col>
-                    <Col></Col>
-                    <Col md={5}>
-                        <MapChart />
-                    </Col>
-                </Row> */}
 
                 <Row md={12} className='text-center'>
                     <input placeholder='Search' onChange={handleChange}></input>

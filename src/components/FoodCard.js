@@ -25,12 +25,16 @@ const FoodCard = ({ country }) => {
     }, [country]);
 
     return (
-        <div>  
-
+        <Card>  
+            <Row>
+                <Col>
+                {/* <Image src={food.meals.strMealsThumb}></Image> */}
             <h1>FOODCARD</h1>
-            {food.meals.[0].strMeal}
+            {console.log(food.meals[0])}
+            </Col>
+            </Row>
 
-        </div>
+        </Card>
     )
 };
 
